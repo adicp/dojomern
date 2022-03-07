@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 
 const ColorGenerator = (props) => {
     const [boxColor, setBoxColor] = useState("");
-    
+    const [colorArr,setColorArr] = useState([]);
     const handleBox = (e) => {
-        e.preventDefault();
-        props.getNewColor(boxColor);
-        setBoxColor("");
-    };
+      setColorArr([...colorArr, boxColor]) ;
+      setBoxColor("");
+  };
 
     return (
     <div>
