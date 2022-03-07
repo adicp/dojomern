@@ -1,0 +1,36 @@
+#header {
+    height: 10vh;
+    width: 90%;
+    background-color: green;
+}
+#main {
+    /* display: flex; */
+    height: 60vh;
+    width: 65%;
+    background-color: orangered;
+    padding: 10px;
+    margin-left: 20px;
+}
+#subcontentchild {
+    display: flex;
+    align-items: center;
+}
+
+#subcontent {
+    height: 30vh;
+    width: 30%;
+    background-color: rgb(238, 227, 108);
+    margin: 10px;
+}
+
+#advertisement {
+    height: 20vh;
+    width: 95%;
+    background-color: plum;
+    margin: 10px;
+}
+#navigation {
+    height: 50vh;
+    width: 20%;
+    background-color: blue;
+}
