@@ -1,24 +1,30 @@
 import './App.css';
-import React from 'react';
 import BoxGenerator from './Components/BoxGenerator';
-import BoxGeneratorDisplay from './Components/BoxGeneratorDisplay';
+import React, { useState } from 'react';
 
 function App() {
-  let boxArr = [];
-  const addBoxesColor = (boxColor) => {
-    boxArr.push(boxColor);
-    console.log(boxArr);
-  }
+
+  const [boxColor, setBoxColor] = useState("");
+  const [colorArr,setColorArr] = useState([]);
+  const handleBox = (e) => {
+    setColorArr([...colorArr, boxColor]) ;
+    setBoxColor("");
+};
+
+
+
 
   return (
-    <>
-      <BoxGenerator onNewColor= { addBoxesColor }/>
-        {boxArr[0]}
-      
-      {/* <BoxGeneratorDisplay boxColor= { boxArr }/> */}
-      {/* { BoxGeneratorDisplay (boxArr) } */}
-      
-    </>
+
+    <div>
+      <label>Color</label>
+      <input type="text" value = { boxColor } onChange = {(e) => setBoxColor(e.target.value)}/>
+      <button onClick={ handleBox }>Add</button>
+      <div className='flexboxes'>
+        {colorArr.map((item,i) => (<BoxGenerator onNewColor = { item} onIndex = {i}/>))}
+      </div>
+    </div>
+
   );
 }
 
