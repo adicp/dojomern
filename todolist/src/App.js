@@ -1,48 +1,56 @@
-import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
 
 function App() {
   const [newTask, setNewTask] = useState("");
   const [taskArr,setTaskArr] = useState([]);
+  const [idUnique,setUniqueId] = useState(taskArr.length + 1);
 
   const handleList = (e) => {
-    console.log (taskArr.length);
-
+    // console.log (taskArr.length);
+    const taskId = idUnique + 1;
     const tasks = {
+      id: taskId,
       text: newTask,
       completed: false
     } 
+    // console.log(taskId);
     setTaskArr ([...taskArr, tasks]);
     setNewTask("");
+    setUniqueId(taskId);
 };
 
-const handleCompleteTask = (index) => {
-    const taskUpdated = taskArr[index];
-    console.log(taskUpdated);
-    taskUpdated.completed = !taskUpdated.completed;
-    taskArr[index]=taskUpdated;
-    console.log(taskArr);
+
+//update the main array, with the result of map function on the main array to modify an element of the array
+const handleCompleteTask = (id) => {
+    const taskUpdated = [...taskArr].map((newTask) => {
+      if (newTask.id === id) {
+        newTask.completed = !newTask.completed
+      }
+      return newTask;
+    })
+    setTaskArr(taskUpdated);
 };
 
-const handleDeleteTask = (index) => {
+//update the main array, with the result of filter function on the main array to remove an element of the array
+const handleDeleteTask = (id) => {
+  const taskUpdated = [...taskArr].filter((newTask) => newTask.id !== id);
+  setTaskArr(taskUpdated);
 
 };
 
 
   return (
     <div className="App">
-        <input id="mainrow" type="text" value = { newTask } onChange = {(e) => setNewTask(e.target.value)}/>
-        <button id="mainrow" onClick={ handleList }>Add</button>
+        <input id="taskinput" type="text" value = { newTask } onChange = {(e) => setNewTask(e.target.value)}/>
+        <button id="addbutton" onClick={ handleList }>Add</button>
         {
-          taskArr.map ((item, i) => 
-            <ul>
-              <li key={ i } >{item.text} 
-              <input type="checkbox" onChange={() => handleCompleteTask (i) } checked= {item.completed}></input>
-              <button onClick={ ()=> handleDeleteTask (i)}>Delete</button>
-              </li>
-            </ul>)
-        }
+          taskArr.map ((item) => 
+          <div className="tasks" key={ item.id }>
+              <h2 className={item.completed ? "listcompleted" : 'list'}>{item.text}</h2>
+              <input type="checkbox" onChange={ () => handleCompleteTask (item.id) } checked= { item.completed }/>
+              <button onClick={ ()=> handleDeleteTask (item.id)}>Delete</button>
+          </div>)}
     </div>
   );
 }
