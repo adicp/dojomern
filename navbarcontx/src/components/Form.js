@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import MyContext from '../context/MyContext';
 
@@ -9,9 +9,9 @@ const Form = () => {
 
 
     return (
-        <div>
-            <label>Your Name</label>
-            <input type="text" value = { name } onChange={ (e)=> setName(e.target.value) }></input>
+        <div className='nameform'>
+            <label className='namelabel'>Your Name: </label>
+            <input className = 'nameinput' type="text" value = { name } onChange={ (e)=> setName(e.target.value) }></input>
         </div>
     );
 };

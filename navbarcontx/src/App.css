@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: violet;
+  color: white;
+}
+.navbar h1 {
+  font-weight: normal;
+}
+
+.nameform {
+  padding: 20px;
+}
+label {
+  font-style: bolder;
+  font-size: 30px;
+  margin-right: 30px;
+}
+.nameform input {
+  padding: 10px;
+  background-color: rgb(228, 226, 226);
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 15px;
+}
+
+
