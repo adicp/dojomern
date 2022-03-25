@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Number from './Number';
-import Hello from './Hello';
+import Greetings from './Greetings';
 
 const ChooseComponent = () => {
     // 
@@ -13,7 +13,7 @@ const ChooseComponent = () => {
     return (
         <div>
         { isNaN(page) ? 
-            <Hello greeting = { page }/>
+            <Greetings greeting = { page }/>
             :
             <Number number = { page }/>
         }

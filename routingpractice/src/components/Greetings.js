@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Hello = (props) => {
+const Greetings = (props) => {
     // console.log(props);
     return (
         <div>
-            <h1>{ props.greeting }</h1>
+            <h1>The Word is: { props.greeting }</h1>
         </div>
     );
 };
 
-export default Hello;
+export default Greetings;

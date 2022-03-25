@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
-import HelloStyled from './components/HelloStyled';
+import GreetingsStyled from './components/HelloStyled';
 import ChooseComponent from './components/ChooseComponent';
 
 
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/:newPage" element={<ChooseComponent />} />
-          <Route path="/:text/:textcolor/:displaycolor" element={<HelloStyled />} />
+          <Route path="/:text/:textcolor/:displaycolor" element={<GreetingsStyled />} />
         </Routes>
       </div>
     </BrowserRouter>

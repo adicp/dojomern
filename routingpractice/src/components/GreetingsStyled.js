@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const HelloStyled = () => {
+const GreetingsStyled = () => {
     const urlObject = useParams();
     const text = urlObject.text;
     const textcolor = urlObject.textcolor;
@@ -15,9 +15,9 @@ const HelloStyled = () => {
     }
     return(
         <div>
-            <h1 style={stylingObject.h1}>{ text }</h1>
+            <h1 style={stylingObject.h1}>The Word is: { text }</h1>
         </div>
     );
 };
 
-export default HelloStyled;
+export default GreetingsStyled;
