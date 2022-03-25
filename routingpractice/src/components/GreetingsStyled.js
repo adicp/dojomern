@@ -15,7 +15,7 @@ const GreetingsStyled = () => {
     }
     return(
         <div>
-            <h1 style={stylingObject.h1}>The Word is: { text }</h1>
+            <h1 style={stylingObject.h1}>The word is: { text }</h1>
         </div>
     );
 };

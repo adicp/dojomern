@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home';
-import GreetingsStyled from './components/HelloStyled';
+import GreetingsStyled from './components/GreetingsStyled';
 import ChooseComponent from './components/ChooseComponent';
 
 

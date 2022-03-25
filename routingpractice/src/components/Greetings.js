@@ -5,7 +5,7 @@ const Greetings = (props) => {
     // console.log(props);
     return (
         <div>
-            <h1>The Word is: { props.greeting }</h1>
+            <h1>The word is: { props.greeting }</h1>
         </div>
     );
 };
